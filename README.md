@@ -1,56 +1,60 @@
-# Welcome to your Expo app 👋
+# Tic Tac Toe: Permainan dengan React Native dan Expo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Permainan Tic Tac Toe (XO) untuk dua pemain yang dibuat untuk tugas
+mata kuliah Mobile Programming. Aplikasi ini dibuat dengan React Native
+dan Expo, serta dijalankan di HP lewat aplikasi Expo Go dan bisa juga di web.
 
-## Get started
+## Identitas
 
-1. Install dependencies
+- Nama: Miraj Jamal Sidik
+- NIM: 41155050240026
+- Mata Kuliah: Mobile Programming
 
-   ```bash
-   npm install
-   ```
+## Fitur
 
-2. Start the app
+- Papan permainan 3x3, pemain X dan O bergantian menekan kotak.
+- Teks status yang berubah otomatis: giliran pemain, pemenang, atau seri.
+- Kotak yang sudah terisi tidak bisa ditimpa.
+- Permainan terkunci setelah ada pemenang.
+- Tombol **Mulai Ulang** untuk mengosongkan papan dan bermain lagi.
 
-   ```bash
-   npx expo start
-   ```
+## Teknologi
 
-In the output, you'll find options to open the app in a
+- React Native dan Expo
+- Hook `useState` untuk mengelola state permainan
+- Flexbox untuk tata letak papan 3x3
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Cara Kerja Singkat
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Papan disimpan sebagai array berisi 9 elemen (kosong, X, atau O), dan
+giliran pemain disimpan dalam satu state tersendiri. Setiap kali kotak
+ditekan, aplikasi membuat salinan baru dari papan, mengisinya dengan
+simbol pemain, lalu menggantikan state lama. Setelah itu aplikasi
+memeriksa 8 kemungkinan garis kemenangan (3 baris, 3 kolom, 2 diagonal).
+Jika ada tiga simbol sama berjajar, pemenang ditampilkan. Jika semua
+kotak terisi tanpa pemenang, hasilnya seri.
 
-## Get a fresh project
+## Screenshot
 
-When you're ready, run:
+### Papan Awal
 
-```bash
-npm run reset-project
-```
+![Papan Awal](Screenshots/1-papan-awal.png)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Permainan Berjalan
 
-### Other setup steps
+![Permainan Berjalan](Screenshots/2-permainan-berjalan.png)
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Ada Pemenang
 
-## Learn more
+![Pemenang](Screenshots/3-pemenang.png)
 
-To learn more about developing your project with Expo, look at the following resources:
+### Permainan Seri
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+![Seri](Screenshots/4-seri.png)
 
-## Join the community
+## Cara Menjalankan
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Clone repository ini, lalu masuk ke foldernya.
+2. Install dependensi: `npm install`
+3. Jalankan aplikasi: `npx expo start`
+4. Scan QR Code dengan aplikasi Expo Go di HP.
